@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&family=Chivo&family=Inconsolata&family=Prata&display=swap');
+
+@font-face {
+    font-family: 'puzzledregular';
+    src: url('../fonts/puzzled-regular-webfont.woff2') format('woff2'),
+         url('../fonts/puzzled-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$almost-black: #252525;
+$dark-grey: #1a1a1b;
+$grey: #cccccc;
+$light: #f2f2f2;
+$beige: #ebe7e3;
+$moss-green: #5F6B43;
+$light-green: #ACB4A8;
+$gold-yellow: #C1AD4E;
+
+$white: #ffffff;
+
+$sans-serif: 'Chivo', sans-serif;
+$heading-serif: 'Prata', serif;
+$serif: 'Averia Serif Libre', cursive;
+$mono: 'Inconsolata', monospace;
+$handwriting: 'puzzledregular';
+
+$x-small: 0.9rem;
+$small: 1rem;
+$h-small: 1.2rem;
+$medium: 1.5rem;
+$h-medium: 3rem;
+$large: 4rem;
+$x-large: 5rem;
+$xm-large: 8rem;
+$xx-large: 11rem;
+
+$circle-size: 25vw;

@@ -1,0 +1,404 @@
+@import './abstracts';
+
+* {
+  box-sizing: border-box;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+}
+
+#nprogress .bar {
+  background: $moss-green;
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: $x-small;
+}
+
+#nprogress .peg {
+  box-shadow: none;
+}
+
+#nprogress .spinner {
+  display: none;
+}
+
+#nprogress .spinner-icon {
+  display: none;
+}
+
+body {
+  background: $white;
+  color: $almost-black;
+  font-family: $sans-serif;
+  font-size: $small;
+}
+
+a {
+  color: $dark-grey;
+  text-decoration: none;
+}
+
+.content {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#scroll-to-top {
+  display: none;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  bottom: 1rem;
+  width: 2.7rem;
+  height: 2.7rem;
+  padding: 0.4rem;
+  fill: $dark-grey;
+  right: 1rem;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: $dark-grey;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  svg {
+    transition: transform 0.5s ease-in-out;
+  }
+
+  &:hover {
+    background-color: $white;
+    fill: $gold-yellow;
+    svg {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.quote-section {
+  @include flex-centered;
+  flex-direction: column;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  line-height: 2;
+
+  h2 {
+    font-size: $medium;
+    font-family: $heading-serif;
+    @include uppercase;
+  }
+
+  p {
+    font-family: $mono;
+    @include uppercase;
+    font-size: $x-small;
+  }
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2rem 0;
+  padding: 5%;
+  background-color: $light;
+
+  .about-heading {
+    @include flex-centered;
+    flex-direction: column;
+
+    h3 {
+      font-size: $xm-large;
+      font-weight: normal;
+      font-family: $handwriting;
+      z-index: 2;
+    }
+
+    h5 {
+      font-size: $small;
+      font-family: $serif;
+      font-weight: normal;
+      @include uppercase;
+    }
+
+    .button {
+      font-size: $x-small;
+      margin-top: 2rem;
+    }
+  }
+
+  .about-description {
+    border-left: 1px solid $grey;
+    text-align: justify;
+    @include flex-centered;
+    padding: 3.5rem 20%;
+
+    p {
+      line-height: 2.5;
+      font-family: $mono;
+      font-size: $x-small;
+    }
+  }
+}
+
+.button {
+  background-color: $moss-green;
+  color: $white;
+  padding: 0.75rem 2rem;
+  transition: 0.5s ease-in-out;
+  font-family: $mono;
+  @include uppercase;
+  letter-spacing: 0.3rem;
+  @include box-shadow;
+
+  &:hover {
+    background-color: $dark-grey;
+    color: $white;
+  }
+}
+
+nav {
+  margin: 3.5rem 0;
+  padding: 1rem 2rem 2rem 2rem;
+  display: flex;
+  justify-content: center;
+
+  .menu-links {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    font-family: $mono;
+
+    a {
+      padding: 0.75rem 2rem;
+    }
+  }
+
+  .heading {
+    text-align: center;
+    position: absolute;
+    top: calc(#{$x-large} * 1.8);
+    z-index: 1;
+
+    h1 {
+      font-family: $heading-serif;
+      @include uppercase;
+      font-weight: normal;
+      font-size: $x-large;
+      text-align: center;
+    }
+  }
+}
+
+#main-image {
+  background: url(../public/main.webp) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.gallery-section {
+  margin: 5rem 10% 9rem 10%;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    height: calc((100vw - 9rem) / 3 * 1.2);
+
+    h5 {
+      font-family: $serif;
+      font-size: $h-small;
+      font-weight: normal;
+      @include uppercase;
+    }
+    p {
+      font-family: $mono;
+      font-size: $x-small;
+    }
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      font-size: $x-small;
+      transform: rotate(90deg) scale(0.6);
+      margin-left: 1rem;
+    }
+
+    #weddings {
+      display: flex;
+      align-items: flex-end;
+      background: url(../public/weddings.webp) no-repeat center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      @include details-whitebackground;
+    }
+
+    #engagements {
+      display: flex;
+      align-items: flex-end;
+      background: url(../public/engagements.webp) no-repeat center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      @include details-whitebackground;
+    }
+
+    #family {
+      display: flex;
+      align-items: flex-end;
+      background: url(../public/family.webp) no-repeat center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      @include details-whitebackground;
+    }
+  }
+}
+
+.pricing-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2rem 0;
+  padding: 5%;
+  background-color: $beige;
+
+  .heading {
+    @include flex-centered;
+    flex-direction: column;
+
+    h3 {
+      font-size: $xm-large;
+      font-weight: normal;
+      font-family: $handwriting;
+      z-index: 2;
+    }
+
+    h5 {
+      font-size: $small;
+      font-family: $serif;
+      font-weight: normal;
+      @include uppercase;
+    }
+
+    .button {
+      font-size: $x-small;
+      margin-top: 2rem;
+    }
+  }
+
+  .description {
+    border-right: 1px solid $grey;
+    text-align: justify;
+    @include flex-centered;
+    padding: 3.5rem 20%;
+
+    p {
+      line-height: 2.5;
+      font-family: $mono;
+      font-size: $x-small;
+    }
+  }
+}
+
+.latest-section {
+  display: grid;
+  margin: 2rem 0;
+  padding: 2rem 10%;
+  background-color: $white;
+
+  .heading {
+    @include flex-centered;
+    flex-direction: column;
+    align-items: flex-start;
+
+    h3 {
+      font-size: $xm-large;
+      font-weight: normal;
+      font-family: $handwriting;
+      z-index: 2;
+      position: relative;
+      top: -4rem;
+      left: 8rem;
+      margin-bottom: -4rem;
+    }
+
+    p {
+      font-size: $small;
+      font-family: $serif;
+      font-weight: normal;
+      @include uppercase;
+    }
+
+    .button {
+      font-size: $x-small;
+      margin-top: 2rem;
+    }
+  }
+
+  .description {
+    text-align: justify;
+    @include flex-centered;
+    padding: 3.5rem 5%;
+
+    p {
+      line-height: 2.5;
+      font-family: $mono;
+      font-size: $x-small;
+    }
+  }
+}
+
+#bottom-menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem 5%;
+  grid-gap: 2rem;
+
+  div {
+    @include flex-centered;
+    flex-direction: column;
+
+    p.first-line {
+      font-family: $mono;
+      @include uppercase
+    }
+  }
+}
+
+footer {
+  @include flex-centered;
+  @include side-padding;
+  @include clear-m-p;
+  padding: 0 1rem;
+  justify-content: space-evenly;
+  background: $light;
+  height: 10rem;
+  flex-direction: column;
+
+  @include md {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  p {
+    @include uppercase;
+    font-size: $x-small;
+  }
+
+  a {
+    color: $dark-grey;
+  }
+}

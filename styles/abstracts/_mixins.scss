@@ -1,0 +1,71 @@
+@use './variables' as *;
+@use './breakpoints' as *;
+
+
+@mixin box-shadow {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+  0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+@mixin flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @mixin uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+  }
+  
+  @mixin side-padding {
+    padding: 0 1rem;
+  }
+  
+  @mixin clear-m-p {
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  @mixin circle-shape($color) {
+    @include clear-m-p;
+    @include flex-centered;
+  
+    flex-direction: column;
+    background: $color;
+    height: $circle-size * 4;
+    border-top-right-radius: $circle-size * 2;
+    margin-bottom: 0;
+
+    @include sl {
+      height: $circle-size * 1.25;
+    }
+
+    @include rwd(600) {
+      height: $circle-size * 1.25;
+    }
+
+    @include md {
+      height: $circle-size * 1.5;
+    }
+
+    @include lg {
+      height: $circle-size * 1.1;
+    }
+
+  }
+
+  @mixin details-whitebackground {
+    .details {
+      background-color: $white;
+      padding: 2rem 1rem 2rem 2rem;
+      width: 100%;
+      text-align: center;
+      margin: 0 1.5rem;
+      display: flex;
+      justify-content: space-evenly;
+      position: relative;
+      bottom: -4.5rem
+    }
+  }
