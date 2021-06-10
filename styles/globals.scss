@@ -231,6 +231,7 @@ nav {
       font-size: $x-small;
       transform: rotate(90deg) scale(0.6);
       margin-left: 1rem;
+      transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
     }
 
     #weddings {
@@ -242,6 +243,7 @@ nav {
       -o-background-size: cover;
       background-size: cover;
       @include details-whitebackground;
+      height: 100%;
     }
 
     #engagements {
@@ -253,6 +255,7 @@ nav {
       -o-background-size: cover;
       background-size: cover;
       @include details-whitebackground;
+      height: 100%;
     }
 
     #family {
@@ -264,6 +267,7 @@ nav {
       -o-background-size: cover;
       background-size: cover;
       @include details-whitebackground;
+      height: 100%;
     }
   }
 }
@@ -308,7 +312,39 @@ nav {
     p {
       line-height: 2.5;
       font-family: $mono;
-      font-size: $x-small;
+      font-size: $small;
+    }
+  }
+}
+
+#featured {
+  background: url(../public/featured.webp) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 50vw;
+  position: relative;
+
+  .heading {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    color: $white;
+    font-family: $mono;
+    font-size: $small;
+
+    span.handwriting {
+      font-family: $handwriting;
+      font-size: $xm-large;
+      position: relative;
+      top: 1.5rem;
+      margin-right: 1rem;
+    }
+
+    p.second-line {
+      margin-top: -1.5rem;
+      text-align: right;
     }
   }
 }
@@ -364,8 +400,17 @@ nav {
 #bottom-menu {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 2rem 5%;
-  grid-gap: 2rem;
+  padding: 5rem 5%;
+  text-align: center;
+
+  div {
+    padding: 2rem 0;
+  }
+
+  div.center {
+    border-left: 1px solid $moss-green;
+    border-right: 1px solid $moss-green;
+  }
 
   div {
     @include flex-centered;
@@ -373,32 +418,87 @@ nav {
 
     p.first-line {
       font-family: $mono;
-      @include uppercase
+
+      @include uppercase;
+    }
+
+    p.second-line {
+      font-family: $serif;
+      @include uppercase;
+      font-size: $medium;
+      color: $moss-green;
+      transition: 0.5s ease-in-out;
+
+      &:hover {
+        color: $grey;
+      }
     }
   }
 }
 
 footer {
   @include flex-centered;
-  @include side-padding;
+  flex-direction: column;
   @include clear-m-p;
-  padding: 0 1rem;
+  padding: 2rem 10%;
   justify-content: space-evenly;
   background: $light;
-  height: 10rem;
-  flex-direction: column;
-
-  @include md {
-    justify-content: space-between;
-    flex-direction: row;
-  }
 
   p {
     @include uppercase;
-    font-size: $x-small;
+    line-height: 3;
+    font-family: $mono;
+    font-size: $xx-small;
   }
 
   a {
     color: $dark-grey;
+  }
+
+  .footer-menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 1rem 0 3rem 0;
+    grid-gap: 3rem;
+    width: 100%;
+    padding-top: 5%;
+
+    #contact {
+      text-align: center;
+
+      h5 {
+        margin-bottom: 2rem;
+      }
+    }
+
+    h5 {
+      font-family: $heading-serif;
+      font-size: $medium;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      list-style: none;
+      @include uppercase;
+      line-height: 2;
+    }
+
+    #contact-details {
+      font-size: $xx-small;
+      @include flex-centered;
+
+      li {
+        &.title {
+          font-family: $serif;
+        }
+
+        &.details {
+          margin-bottom: 1.5rem;
+          text-transform: none;
+          letter-spacing: normal;
+          font-family: $mono;
+        }
+      }
+    }
   }
 }

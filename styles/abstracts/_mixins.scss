@@ -66,6 +66,23 @@
       display: flex;
       justify-content: space-evenly;
       position: relative;
-      bottom: -4.5rem
+      bottom: -4.5rem;
+      transition: 2s ease-in-out; 
+
+      &:hover {
+        bottom: 0;
+
+        h5 {
+          color: $moss-green;
+        }
+
+        svg {
+          width: 2rem;
+          height: 2rem;
+          font-size: $x-small;
+          margin-left: 1rem;
+          transform: rotate(90deg) scale(0.6) translateY(-5px);
+        }
+      }
     }
   }

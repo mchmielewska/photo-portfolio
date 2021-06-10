@@ -18,7 +18,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="heading">
-          <h1>Monika Chmielewska</h1>
+        <h1>Monika Chmielewska</h1>
       </div>
     </nav>
   );
