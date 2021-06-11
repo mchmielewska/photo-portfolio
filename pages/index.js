@@ -5,9 +5,11 @@ import Gallery from '../components/Gallery';
 import Latest from '../components/Latest';
 import Pricing from '../components/Pricing';
 import Featured from '../components/Featured';
+import Instagram from '../components/InstagramFeed';
 import BottomMenu from '../components/BottomMenu';
 
-export default function Home() {
+export default function Home({ galleries }) {
+  console.log(galleries);
   return (
     <>
       <Head>
@@ -17,10 +19,23 @@ export default function Home() {
       <Quote />
       <About />
       <Gallery />
-      <Latest />
+      <Latest galleries={galleries} />
       <Pricing />
       <Featured />
+
       <BottomMenu />
+      {/* <Instagram /> */}
     </>
   );
+}
+
+export async function getStaticProps() {
+  console.log('Async!');
+  const res = await fetch('http://localhost:1337/galleries');
+  const galleries = await res.json();
+  return {
+    props: {
+      galleries,
+    },
+  };
 }

@@ -3,20 +3,30 @@ import Link from 'next/link';
 const FooterMenu = () => {
   return (
     <div className="footer-menu">
-      <div className="col">
-        <h5>photography</h5>
+      <div className="col" id="menu">
+        <h5>Monika Chmielewska</h5>
+        <p className="heading">portrait & occasional photography</p>
         <ul>
-          <li>weddings</li>
-          <li>couples</li>
-          <li>family</li>
-          <li>portraits</li>
-        </ul>
-      </div>
-      <div className="col">
-        <h5>about</h5>
-        <ul>
-          <li>who is Monika</li>
-          <li>info & pricing</li>
+          <li>
+            <Link href="/about">
+              <a>about</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/pricing">
+              <a>pricing</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/faq">
+              <a>faq</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/portfolio">
+              <a>photos</a>
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="col" id="contact-details">

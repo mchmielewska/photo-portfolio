@@ -42,7 +42,7 @@ const Gallery = () => {
           <div className="details">
             <div>
               <h5>family</h5>
-              <p>relieve all the happy moments</p>
+              <p>relive all the happy moments</p>
             </div>
             <svg>
               <path
