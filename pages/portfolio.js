@@ -1,11 +1,6 @@
 import Head from 'next/head';
-import About from '../components/About';
 import Quote from '../components/Quote';
-import Gallery from '../components/Gallery';
-import Latest from '../components/Latest';
-import Pricing from '../components/Pricing';
-import Featured from '../components/Featured';
-import Instagram from '../components/InstagramFeed';
+import PortfolioFullGallery from '../components/PortfolioFullGallery';
 import BottomMenu from '../components/BottomMenu';
 import Navbar from '../components/Navbar';
 
@@ -15,17 +10,12 @@ export default function Home({ galleries }) {
       <Head>
         <title>Monika Chmielewska - Munich based photographer</title>
       </Head>
-      <Navbar />
-      <div id="main-image"></div>
-      <Quote />
-      <About />
-      <Gallery />
-      <Latest galleries={galleries} />
-      <Pricing />
-      <Featured />
-
+      <div className="single-gallery">
+        <Navbar />
+        <Quote />
+      </div>
+      <PortfolioFullGallery />
       <BottomMenu />
-      {/* <Instagram /> */}
     </>
   );
 }
