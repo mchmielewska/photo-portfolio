@@ -18,11 +18,6 @@ const FooterMenu = () => {
             </Link>
           </li>
           <li>
-            <Link href="/faq">
-              <a>faq</a>
-            </Link>
-          </li>
-          <li>
             <Link href="/portfolio">
               <a>photos</a>
             </Link>

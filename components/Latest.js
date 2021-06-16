@@ -2,7 +2,6 @@ import SingleGalleryPost from './SingleGalleryPost';
 
 const Latest = (props) => {
   const galleries = props.galleries;
-  console.log(galleries);
   return (
     <div className="latest-section">
       <div className="heading">
@@ -11,7 +10,7 @@ const Latest = (props) => {
       </div>
       <div className="latest-gallery">
         {galleries.map((singleGallery) => (
-          <SingleGalleryPost {...singleGallery} />
+          <SingleGalleryPost  key={singleGallery.id} {...singleGallery} />
         ))}
       </div>
     </div>

@@ -7,6 +7,22 @@
   0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
+@mixin ease-transition {
+  transition: 0.5s ease-in-out;
+}
+
+@mixin svg-transition {
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+@mixin background-image($image) {
+  background: url($image) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 @mixin flex-centered {
     display: flex;
     justify-content: center;
@@ -28,46 +44,42 @@
   }
   
 
-  @mixin circle-shape($color) {
-    @include clear-m-p;
-    @include flex-centered;
-  
-    flex-direction: column;
-    background: $color;
-    height: $circle-size * 4;
-    border-top-right-radius: $circle-size * 2;
-    margin-bottom: 0;
-
-    @include sl {
-      height: $circle-size * 1.25;
-    }
-
-    @include rwd(600) {
-      height: $circle-size * 1.25;
-    }
-
-    @include md {
-      height: $circle-size * 1.5;
-    }
-
-    @include lg {
-      height: $circle-size * 1.1;
-    }
-
-  }
-
   @mixin details-whitebackground {
     .details {
       background-color: $white;
-      padding: 2rem 1rem 2rem 2rem;
+      padding: 1rem 0.5rem 1rem 1rem;
       width: 100%;
       text-align: center;
-      margin: 0 1.5rem;
+      margin: 0 0.5rem;
       display: flex;
       justify-content: space-evenly;
       position: relative;
-      bottom: -4.5rem;
+      bottom: -2.5rem;
       transition: 2s ease-in-out; 
+
+      @include md {
+        padding: 2rem 1rem 2rem 2rem;
+        margin: 0 1.5rem;
+        bottom: -4.5rem;
+      }
+
+      h5 {
+        font-size: $x-small;
+
+        @include md {
+          font-size: $small;
+        }
+  
+      }
+
+      p {
+        font-size: $xx-small;
+
+        @include md {
+          font-size: $x-small;
+        }
+  
+      }
 
       &:hover {
         bottom: 0;

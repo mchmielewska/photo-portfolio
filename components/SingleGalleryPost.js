@@ -9,7 +9,7 @@ const SingleGalleryPost = (props) => {
     day: '2-digit',
   });
   return (
-    <div key={props.id} className="gallery-item">
+    <div className="gallery-item">
       <img src={imgSource}></img>
       <h4>{props.sessionCategory}</h4>
       <Link href={url}>
