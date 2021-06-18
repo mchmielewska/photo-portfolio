@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "next": "10.2.3",
+    "next": "^11.0.0",
     "nprogress": "^0.2.0",
     "prettier": "^2.3.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-ig-feed": "^1.0.4",
     "sass": "^1.34.1"
   }

@@ -10,6 +10,17 @@ import BottomMenu from '../components/BottomMenu';
 import Navbar from '../components/Navbar';
 
 export default function Home({ galleries }) {
+  let latestGalleries = [];
+  if (galleries) {
+    let count = 0;
+    for (let i = galleries.length - 1; i >= 0; i--) {
+      if (count < 3) {
+        latestGalleries.push(galleries[i]);
+        count++;
+      } else return;
+    }
+  }
+
   return (
     <>
       <Head>
@@ -20,7 +31,7 @@ export default function Home({ galleries }) {
       <Quote />
       <About />
       <Gallery />
-      <Latest galleries={galleries} />
+      <Latest galleries={latestGalleries} />
       <Pricing />
       <Featured />
 
