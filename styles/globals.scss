@@ -426,8 +426,15 @@ nav {
 #main-image-faq {
   @include background-image('../../public/main-photo-faq.webp');
   position: relative;
-  height: 40vh;
+  height: 50vh;
 }
+
+#main-image-pricing {
+  @include background-image('../../public/main-photo-pricing.webp');
+  position: relative;
+  height: 50vh;
+}
+
 
 .gallery-section {
   margin: 5rem 5%;
@@ -527,22 +534,7 @@ nav {
     }
 
     @include lg {
-      grid-gap: 5rem;
-    }
-
-    @include rwd(1920) {
-      height: 75vw;
-    }
-
-    #portraits,
-    #engagements,
-    #weddings,
-    #family {
-      @include xl {
-        width: calc((65vw - 2rem) / 2);
-        height: 70vh;
-        margin-bottom: 0;
-      }
+      grid-gap: 3rem;
     }
   }
 }
