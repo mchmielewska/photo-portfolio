@@ -48,25 +48,24 @@
     .details {
       background-color: $white;
       padding: 1rem 0.5rem 1rem 1rem;
-      width: 100%;
       text-align: center;
       margin: 0 0.5rem;
       display: flex;
       justify-content: space-evenly;
       position: relative;
-      bottom: -2.5rem;
+      bottom: 2.5rem;
       transition: 2s ease-in-out; 
 
-      @include md {
+      @include lg {
         padding: 2rem 1rem 2rem 2rem;
         margin: 0 1.5rem;
-        bottom: -4.5rem;
+        bottom: 3.5rem;
       }
 
       h5 {
         font-size: $x-small;
 
-        @include md {
+        @include lg {
           font-size: $small;
         }
   
@@ -75,14 +74,18 @@
       p {
         font-size: $xx-small;
 
-        @include md {
+        @include lg {
           font-size: $x-small;
         }
   
       }
 
       &:hover {
-        bottom: 0;
+        bottom: 4rem;
+
+        @include lg {
+          bottom: 6.5rem;
+        }
 
         h5 {
           color: $moss-green;
@@ -97,4 +100,35 @@
         }
       }
     }
+  }
+
+  @mixin gallery-photo {
+    width: 90vw;
+    height: calc(90vw * 4 / 3);
+    margin-bottom: 5rem;
+
+    @include sl {
+      height: calc((70vw - 2rem)/2 * 4 / 3);
+      width: 42vw;
+      margin-bottom: 2.5rem;
+    }
+
+    @include sl-m {
+      height: calc((80vw - 2rem)/2 * 4 / 3);
+      width: calc((80vw - 2rem)/2);
+      margin-bottom: 5rem;
+    }
+
+    @include md {
+      height: calc((85vw - 2rem)/2 * 4 / 3);
+      width: calc((85vw - 2rem)/2);
+      margin-bottom: 4rem;
+    }
+
+    @include lg {
+      height: calc((80vw - 2rem)/2 * 4 / 3);
+      width: calc((80vw - 2rem)/2);
+      margin-bottom: 5rem;
+    }
+  
   }

@@ -2,10 +2,14 @@ import Link from 'next/link';
 
 const GalleryCard = (props) => {
   const path = `/${props.categoryName}`;
+  const imgPath = `${props.categoryName}.webp`
   return (
     <Link href={path}>
       <a>
-        <div id={props.categoryName}>
+        <div id={props.categoryName} className="gallery-card">
+          <div>
+            <img src={imgPath}></img>
+          </div>
           <div className="details">
             <div>
               <h5>{props.categoryName}</h5>

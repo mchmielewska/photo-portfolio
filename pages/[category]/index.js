@@ -5,6 +5,7 @@ import Quote from '../../components/Quote';
 import SingleGalleryPost from '../../components/SingleGalleryPost';
 
 export default function Home({ galleries }) {
+  galleries.sort((galleryA, galleryB) => new Date(galleryB.eventDate) - new Date(galleryA.eventDate));
   return (
     <>
       <Head>

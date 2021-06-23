@@ -17,7 +17,7 @@ export default function Home({ galleries }) {
       if (count < 3) {
         latestGalleries.push(galleries[i]);
         count++;
-      } else return;
+      }
     }
   }
 
