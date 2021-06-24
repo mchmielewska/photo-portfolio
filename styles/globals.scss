@@ -110,6 +110,88 @@ a {
   }
 }
 
+.pricing-page {
+  margin: 0;
+  padding: 5%;
+
+  @include lg {
+    padding: 5% 10%;
+  }
+
+  @include xl {
+    padding: 5% 15%;
+  }
+
+  .offers {
+
+    h4 {
+      font-size: $large;
+      font-weight: normal;
+      font-family: $handwriting;
+      z-index: 2;
+      text-align: center;
+  
+      @include lg {
+        font-size: $x-large;
+      }
+    }
+    .description {
+      font-family: $serif;
+      font-size: $xx-small;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: $moss-green;
+      @include uppercase
+    }
+
+    & > div {
+      padding: 7.5%;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      grid-template-columns: 1fr;
+      background-color: $light;
+      margin-bottom: 2rem;
+
+      @include md {
+        padding: 7.5% 5%;
+        grid-gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+        h5 {
+          display: flex;
+          font-size: $h-small;
+          font-weight: normal;
+          font-family: $serif;
+          @include uppercase;
+          text-align: right;
+        }
+
+        p {
+          display: flex;
+          white-space: pre-line;
+          font-family: $mono;
+          font-size: $xx-small;
+          line-height: 2;
+          padding: 1.5rem 0;
+
+          @include md {
+            font-size: $x-small;
+            padding: 0
+          }
+        }
+      
+
+      @include md {
+        grid-template-columns: 1fr 3fr 1fr;
+      }
+    }
+
+  }
+
+}
+
 .about-section {
   display: grid;
   grid-template-columns: 1fr;
@@ -194,11 +276,12 @@ a {
 
 nav {
   margin: 0.5rem 0;
-  padding: 1rem 2rem 2rem 2rem;
+  padding: 1rem 0 2rem 0;
   display: flex;
   justify-content: center;
 
   @include md {
+    padding: 1rem 2rem 2rem 2rem;
     margin: 3.5rem 0;
   }
 
@@ -287,30 +370,35 @@ nav {
   nav {
     margin-bottom: 2rem;
   }
+
   .heading {
+    text-align: center;
+    position: absolute;
     top: calc(#{$x-large} * 2.2);
 
-    @include md {
-      top: calc(#{$x-large} * 1.8);
+    z-index: 1;
+
+    @include sl {
+      top: calc(#{$x-large} * 1.6);
     }
 
-    @include lg {
+    @include md {
+      top: calc(#{$x-large} * 2);
+    }
+
+    @include xl {
       top: calc(#{$x-large} * 1.9);
     }
 
     h1 {
-      font-size: $h-small;
-
-      @include sl {
-        font-size: $medium;
-      }
+      font-size: $small;
+      font-family: $heading-serif;
+      @include uppercase;
+      font-weight: normal;
+      text-align: center;
 
       @include md {
         font-size: $h-medium;
-      }
-
-      @include lg {
-        font-size: $large;
       }
 
       @include xl {
@@ -343,7 +431,7 @@ nav {
     }
 
     p {
-      font-size: $xx-small;
+      font-size: $xxx-small;
       @include lg {
         font-size: $x-small;
       }
@@ -354,8 +442,21 @@ nav {
 .gallery-container {
   @include flex-centered;
   flex-direction: column;
-  padding: 0 10%;
+  padding: 0;
   margin-top: 3rem;
+  text-align: center;
+
+  @include lg {
+    padding: 0 10%;
+  }
+
+  @include xl {
+    padding: 0 15%;
+  }
+
+  @include xxl {
+    padding: 0 20%;
+  }
 
   h4 {
     font-family: $serif;
@@ -518,7 +619,11 @@ nav {
   margin-bottom: 1rem;
 
   @include xl {
-    margin: 5rem 15% 9rem 15%;
+    margin: 5rem 20% 9rem 20%;
+  }
+
+  @include xxl {
+    margin: 5rem 25% 9rem 25%;
   }
 
   .grid {
@@ -526,7 +631,7 @@ nav {
     height: initial;
     display: inline;
     grid-template-columns: 1fr;
-    grid-gap: 0;
+    grid-gap: 1.5rem;
 
     @include md {
       display: grid;
@@ -698,7 +803,7 @@ nav {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @include md {
+    @include lg {
       grid-template-columns: repeat(3, 1fr);
     }
 
@@ -706,6 +811,15 @@ nav {
       @include flex-centered;
       flex-direction: column;
       margin-bottom: 2rem;
+      text-align: center;
+
+      &:hover {
+        cursor: pointer;
+
+        h5 {
+          color: $moss-green;
+        }
+      }
 
       img {
         width: 100%;
@@ -931,6 +1045,99 @@ footer {
 
         &:last-child {
           margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.contact-section {
+  @include clear-m-p;
+  @include flex-centered;
+  .container {
+    width: 90%;
+    @include flex-centered;
+    flex-direction: column;
+    padding: 1rem 0;
+
+    @include md {
+      width: 75%;
+    }
+
+    @include lg {
+      width: 50%;
+    }
+
+    h1 {
+      margin-top: 2rem;
+      font-size: $x-large;
+      font-weight: normal;
+      font-family: $handwriting;
+      color: $almost-black;
+    }
+
+    form {
+      font-family: $mono;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1rem;
+      margin: 2rem 0;
+      padding: 1rem;
+      width: 100%;
+
+      label {
+        grid-column: 1 / span 2;
+      }
+
+      input[type='text'],
+      input[type='email'],
+      textarea {
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        border: solid 1px transparent;
+        border-bottom: solid 1px $dark-grey;
+        width: 100%;
+        font-family: $mono;
+        font-size: $small;
+        line-height: 2rem;
+        text-align: justify;
+
+        &:focus,
+        &:active,
+        &:focus-visible {
+          border: solid 1px transparent;
+          border-bottom: solid 1px $moss-green;
+          outline: none;
+        }
+      }
+
+      textarea {
+        resize: none;
+        width: 100%;
+
+        &:focus,
+        &:active,
+        &:focus-visible {
+          border: solid 1px $moss-green;
+          outline: none;
+        }
+      }
+
+      input[type='submit'] {
+        grid-column: 2;
+        margin: 0.5rem 0;
+        border: none;
+        font-size: $small;
+
+        &:hover {
+          cursor: pointer;
+          border: none;
+        }
+
+        &:focus,
+        &:active,
+        &:focus-visible {
+          outline: none;
         }
       }
     }

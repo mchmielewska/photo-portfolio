@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const GalleryCard = (props) => {
   const path = `/${props.categoryName}`;
-  const imgPath = `${props.categoryName}.webp`
+  const imgPath = `${props.categoryName}.webp`;
   return (
     <Link href={path}>
       <a>

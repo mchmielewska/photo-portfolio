@@ -1,34 +1,64 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import BottomMenu from '../components/BottomMenu';
+import Quote from '../components/Quote';
 
-export default function Home() {
+export default function Home({ offers, weddingOffers }) {
+  const weddingOffersDetails = weddingOffers
+    ? weddingOffers.map((singleOffer) => (
+        <div className="single-offer" key={singleOffer.id}>
+          <h5>{singleOffer.offerName}</h5>
+          <p>{singleOffer.offerDetails}</p>
+          <h5>{singleOffer.price} €</h5>
+        </div>
+      ))
+    : null;
+
+  const otherOffersDetails = offers
+    ? offers.map((singleOffer) => (
+        <div className="single-offer" key={singleOffer.id}>
+          <h5>{singleOffer.offerName}</h5>
+          <p>{singleOffer.offerDetails}</p>
+          <h5>{singleOffer.price} €</h5>
+        </div>
+      ))
+    : null;
   return (
     <>
       <Head>
         <title>Monika Chmielewska - Munich based photographer</title>
       </Head>
-      <Navbar />
-      <div id="main-image-pricing"></div>
-      <div className="about-section">
-      <div className="about-heading" alt="photographer">
-        <h3>I'm Monika</h3>
-        <h5>the one behind the camera</h5>
+      <div className="single-gallery">
+        <Navbar />
+        <Quote />
       </div>
-      <div className="about-description">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          pellentesque tempus ex. Mauris suscipit felis non libero varius, in
-          viverra mauris ultricies. Nullam interdum accumsan ante. Quisque
-          dictum dignissim pellentesque. Ut quis nisl non sem bibendum lacinia.
-          Fusce nisl enim, consequat quis fringilla in, pretium non purus. Fusce
-          laoreet venenatis turpis ac auctor. Integer pellentesque, nulla vel
-          tempus interdum, purus nisl porttitor elit, eget placerat neque sapien
-          in nisi.
-        </p>
+      <div className="pricing-page">
+        <div className="offers">
+          <h4>Wedding packages</h4>
+          {weddingOffersDetails}
+          <h4>Other</h4>
+          <p className="description">
+            portrait / pregnancy / family / couples / pre & after - wedding
+          </p>
+          {otherOffersDetails}
+        </div>
       </div>
-    </div>
-    <BottomMenu />
+      <BottomMenu />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const resWeddings = await fetch('http://localhost:1337/offers');
+  const weddingOffers = await resWeddings.json();
+
+  const resOthers = await fetch('http://localhost:1337/other-offers');
+  const offers = await resOthers.json();
+
+  return {
+    props: {
+      weddingOffers,
+      offers,
+    },
+  };
 }

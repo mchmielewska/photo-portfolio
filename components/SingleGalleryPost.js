@@ -9,18 +9,19 @@ const SingleGalleryPost = (props) => {
     day: '2-digit',
   });
   return (
-    <div className="gallery-item">
-      <img src={imgSource}></img>
-      <h4>{props.sessionCategory}</h4>
-      <Link href={url}>
+    <Link href={url}>
+      <div className="gallery-item">
+        <img src={imgSource}></img>
+        <h4>{props.sessionCategory}</h4>
+
         <a>
           <h5>{props.title}</h5>
         </a>
-      </Link>
-      <h6 className="post-details">
-        {props.location} | {date}
-      </h6>
-    </div>
+        <h6 className="post-details">
+          {props.location} | {date}
+        </h6>
+      </div>
+    </Link>
   );
 };
 

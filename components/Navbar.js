@@ -13,6 +13,9 @@ const Navbar = () => {
         <Link href="/portfolio">
           <a>portfolio</a>
         </Link>
+        <Link href="/pricing">
+          <a>pricing</a>
+        </Link>
         <Link href="/contact">
           <a className="button">contact</a>
         </Link>
