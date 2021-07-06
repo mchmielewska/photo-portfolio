@@ -8,7 +8,7 @@ const GalleryCard = (props) => {
       <a>
         <div id={props.categoryName} className="gallery-card">
           <div>
-            <img src={imgPath}></img>
+            <img alt={props.categoryName} src={imgPath}></img>
           </div>
           <div className="details">
             <div>

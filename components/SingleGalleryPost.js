@@ -11,7 +11,7 @@ const SingleGalleryPost = (props) => {
   return (
     <Link href={url}>
       <div className="gallery-item">
-        <img src={imgSource}></img>
+        <img alt={props.title} src={imgSource}></img>
         <h4>{props.sessionCategory}</h4>
 
         <a>
