@@ -3,6 +3,9 @@ import BottomMenu from '../../components/BottomMenu';
 import SingleGallery from '../../components/SingleGallery';
 import Navbar from '../../components/Navbar';
 import Quote from '../../components/Quote';
+import { getStrapiPath } from '../../utils/path';
+
+const strapiPath = getStrapiPath(false) + '/galleries';
 
 export default function Home({ gallery }) {
   const galleryProps = gallery[0];
@@ -25,7 +28,7 @@ export default function Home({ gallery }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch('http://localhost:1337/galleries/');
+  const res = await fetch(strapiPath);
   const galleries = await res.json();
   const paths = galleries.map((singleGallery) => ({
     params: {
@@ -39,12 +42,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { params } = context;
-  console.log(params);
   const galleryName = params.gallery.toString();
-  console.log(galleryName);
-  const res = await fetch(
-    `http://localhost:1337/galleries?gallery=${galleryName}`
-  );
+  const galleryPath = strapiPath + `?gallery=${galleryName}`;
+  const res = await fetch(galleryPath);
   const gallery = await res.json();
   return {
     props: {

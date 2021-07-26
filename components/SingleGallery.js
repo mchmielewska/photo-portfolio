@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { getStrapiPath } from '../utils/path';
 
 const SingleGallery = (props) => {
   const gallery = props.data;
@@ -8,7 +9,7 @@ const SingleGallery = (props) => {
     day: '2-digit',
   });
   const images = gallery.images.map((image) => {
-    const imagePath = 'http://localhost:1337' + image.url;
+    const imagePath = getStrapiPath(true, true) + image.url;
     return <img key={image.id} src={imagePath}></img>;
   });
   return (
