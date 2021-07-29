@@ -12,14 +12,13 @@ const About = () => {
       </div>
       <div className="about-description">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          pellentesque tempus ex. Mauris suscipit felis non libero varius, in
-          viverra mauris ultricies. Nullam interdum accumsan ante. Quisque
-          dictum dignissim pellentesque. Ut quis nisl non sem bibendum lacinia.
-          Fusce nisl enim, consequat quis fringilla in, pretium non purus. Fusce
-          laoreet venenatis turpis ac auctor. Integer pellentesque, nulla vel
-          tempus interdum, purus nisl porttitor elit, eget placerat neque sapien
-          in nisi.
+          I'm originally from Poland - I speak Polish, English and basics of
+          German. I am based in Munich, but I love to travel and visit new
+          places to capture intimate moments and create memories.
+          <br></br>
+          <br></br>
+          I will be glad to tell your story through my eyes and my
+          camera.
         </p>
       </div>
     </div>

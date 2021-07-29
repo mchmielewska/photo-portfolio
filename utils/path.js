@@ -7,3 +7,5 @@ export const getStrapiPath = (isImage, singlePost = false) => {
         else return '.'
     } else return path
 }
+
+export const getStrapiPathForGalleries = getStrapiPath(false) + '/galleries';

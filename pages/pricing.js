@@ -1,7 +1,9 @@
-import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import BottomMenu from '../components/BottomMenu';
 import Quote from '../components/Quote';
+import { getStrapiPath } from '../utils/path';
+import { metaData } from '../utils/metadata';
+const strapiPath = getStrapiPath(false);
 
 export default function Home({ offers, weddingOffers }) {
   const weddingOffersDetails = weddingOffers
@@ -25,9 +27,7 @@ export default function Home({ offers, weddingOffers }) {
     : null;
   return (
     <>
-      <Head>
-        <title>Monika Chmielewska - Munich based photographer</title>
-      </Head>
+      {metaData('pricing')}
       <div className="single-gallery">
         <Navbar />
         <Quote />
@@ -49,10 +49,10 @@ export default function Home({ offers, weddingOffers }) {
 }
 
 export async function getStaticProps() {
-  const resWeddings = await fetch('http://localhost:1337/offers');
+  const resWeddings = await fetch(strapiPath + '/offers');
   const weddingOffers = await resWeddings.json();
 
-  const resOthers = await fetch('http://localhost:1337/other-offers');
+  const resOthers = await fetch(strapiPath + '/other-offers');
   const offers = await resOthers.json();
 
   return {

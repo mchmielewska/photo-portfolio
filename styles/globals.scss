@@ -74,7 +74,7 @@ a {
 
   &:hover {
     background-color: $white;
-    fill: $gold-yellow;
+    fill: $light-green;
     svg {
       transform: translateY(-2px);
     }
@@ -642,6 +642,27 @@ nav {
       grid-gap: 3rem;
     }
   }
+}
+
+.not-found {
+  margin-top: 2rem;
+  padding: 7.5% 5% 10% 5%;
+  background-color: $beige;
+  @include flex-centered;
+  flex-direction: column;
+
+  h3 {
+    font-size: $h-small;
+    font-family: $heading-serif;
+    font-weight: normal;
+    @include uppercase;
+    margin-bottom: 3rem;
+  }
+
+  .button {
+    font-size: $x-small;
+  }
+
 }
 
 .pricing-section {

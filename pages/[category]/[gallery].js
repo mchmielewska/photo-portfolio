@@ -3,18 +3,36 @@ import BottomMenu from '../../components/BottomMenu';
 import SingleGallery from '../../components/SingleGallery';
 import Navbar from '../../components/Navbar';
 import Quote from '../../components/Quote';
-import { getStrapiPath } from '../../utils/path';
-
-const strapiPath = getStrapiPath(false) + '/galleries';
+import { getStrapiPathForGalleries as strapiPath } from '../../utils/path';
 
 export default function Home({ gallery }) {
   const galleryProps = gallery[0];
+
+  console.log(galleryProps);
+
+  const galleryPath = 'https://monikachmielewska.com/' + galleryProps.gallery;
+  const galleryName =
+    galleryProps.title +
+    ' - ' +
+    galleryProps.sessionCategory.substring(
+      0,
+      galleryProps.sessionCategory.length - 1
+    ) +
+    ' photography';
+  const galleryTitle =
+    galleryName + ' | Monika Chmielewska - Munich based photographer';
+  const galleryDescription =
+    'I love to capture intimate moments and create memories. I will be glad to tell your story through my eyes and my camera.';
+
   return (
     <>
       <Head>
-        <title>
-          {gallery.title} - Monika Chmielewska - Munich based photographer
-        </title>
+        <title>{galleryTitle}</title>
+        <meta name="description" content={galleryDescription} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content={galleryTitle} />
+        <meta property="og:description" content={galleryDescription} />
+        <meta property="og:url" content={galleryPath} />
       </Head>
       <div className="single-gallery">
         <Navbar />

@@ -1,13 +1,12 @@
 import Head from 'next/head';
 import Instagram from '../components/InstagramFeed';
 import Navbar from '../components/Navbar';
+import { metaData } from '../utils/metadata';
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Monika Chmielewska - Munich based photographer</title>
-      </Head>
+      {metaData('about')}
       <Navbar />
       <div id="main-image-about"></div>
       <div className="about-section">
@@ -17,11 +16,17 @@ export default function Home() {
         </div>
         <div className="about-description">
           <p>
-            I'm originally from Poland - I speak Polish, English and basics of German.
+            I'm originally from Poland - I speak Polish, English and basics of
+            German.
+            <br></br>I am based in Munich, but I love to travel and visit new
+            places to capture intimate moments and create memories. I will be
+            glad to tell your story through my eyes and my camera.
             <br></br>
-            I am based in Munich, but I love to travel and visit new places to capture intimate moments and create memories. I will be glad to tell your story through my eyes and my camera.
-            <br></br>
-            Even though I finished technical university and I work as a programmer, I have always been drawn to artistic activities. I started to work as a photographer more than 5 years ago, firstly doing mostly portraits. After the first wedding, I was certain that I want to capture all the beautiful momements for people.
+            Even though I finished technical university and I work as a
+            programmer, I have always been drawn to artistic activities. I
+            started to work as a photographer more than 5 years ago, firstly
+            doing mostly portraits. After the first wedding, I was certain that
+            I want to capture all the beautiful momements for people.
           </p>
         </div>
       </div>
