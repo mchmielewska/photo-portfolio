@@ -6,7 +6,7 @@ const About = () => {
       <div className="about-heading" alt="photographer">
         <h3>I'm Monika</h3>
         <h4>the one behind the camera</h4>
-        <Link>
+        <Link href="/about">
           <a className="button" href="/about">read more</a>
         </Link>
       </div>
