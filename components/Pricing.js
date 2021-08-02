@@ -12,8 +12,8 @@ const Pricing = () => {
       <div className="heading">
         <h3>pricing</h3>
         <h4>check my packages</h4>
-        <Link href="/pricing">
-          <a className="button">read more</a>
+        <Link>
+          <a href="/pricing" className="button">read more</a>
         </Link>
       </div>
     </div>

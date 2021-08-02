@@ -15,7 +15,7 @@ const SingleGalleryPost = (props) => {
         <img alt={props.title} src={imgSource}></img>
         <h4>{props.sessionCategory}</h4>
 
-        <a>
+        <a href={url}>
           <h5>{props.title}</h5>
         </a>
         <h6 className="post-details">
