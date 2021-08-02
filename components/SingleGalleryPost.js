@@ -12,7 +12,7 @@ const SingleGalleryPost = (props) => {
   return (
     <Link href={url}>
       <div className="gallery-item">
-        <img alt={props.title} src={imgSource}></img>
+        <img alt={props.title} src={imgSource} width='100%' height='100%'></img>
         <h4>{props.sessionCategory}</h4>
 
         <a href={url}>
