@@ -1,0 +1,52 @@
+@import '../abstracts';
+
+#main-image {
+    @include background-image('../../public/main-xsm.webp');
+    position: relative;
+    height: 40vh;
+  
+    @include sl {
+      @include background-image('../../public/main-sm.webp');
+      height: 60vh;
+    }
+  
+    @include md {
+      @include background-image('../../public/main-md.webp');
+    }
+  
+    @include lg {
+      height: 65vh;
+    }
+  
+    @include xl {
+      @include background-image('../../public/main.webp');
+      height: 100vh;
+    }
+  }
+  
+  #main-image-about {
+    @include background-image('../../public/main-about-sm.webp');
+    position: relative;
+    height: 40vh;
+  
+    @include lg {
+      height: 60vh;
+    }
+  
+    @include xl {
+      @include background-image('../../public/main-about.webp');
+      height: 80vh;
+    }
+  }
+  
+  #main-image-faq {
+    @include background-image('../../public/main-photo-faq.webp');
+    position: relative;
+    height: 50vh;
+  }
+  
+  #main-image-pricing {
+    @include background-image('../../public/main-photo-pricing.webp');
+    position: relative;
+    height: 50vh;
+  }

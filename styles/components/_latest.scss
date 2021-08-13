@@ -1,0 +1,112 @@
+@import '../abstracts';
+
+.latest-section {
+    display: grid;
+    margin: 2rem 0;
+    padding: 2rem 10%;
+    background-color: $white;
+  
+    .heading {
+      @include flex-centered;
+      flex-direction: column;
+      align-items: flex-start;
+  
+      h3 {
+        font-weight: normal;
+        font-family: $handwriting;
+        z-index: 2;
+        position: relative;
+        font-size: $large;
+        top: -1.5rem;
+        left: 4rem;
+        margin-bottom: 0;
+  
+        @include md {
+          font-size: $xm-large;
+          top: -4rem;
+          left: 8rem;
+          margin-bottom: -4rem;
+        }
+      }
+  
+      p {
+        font-size: $small;
+        font-family: $serif;
+        font-weight: normal;
+        @include uppercase;
+      }
+  
+      .button {
+        font-size: $x-small;
+        margin-top: 2rem;
+      }
+    }
+  
+    .latest-gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+  
+      @include sl-m {
+        grid-template-columns: repeat(2, 1fr);
+      }
+  
+      @include lg {
+        grid-template-columns: repeat(3, 1fr);
+      }
+  
+      .gallery-item {
+        @include flex-centered;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        text-align: center;
+  
+        &:hover {
+          cursor: pointer;
+  
+          h5 {
+            color: $moss-green;
+          }
+        }
+  
+        img {
+          width: 100%;
+          height: auto;
+        }
+  
+        h4 {
+          font-family: $serif;
+          font-size: $xx-small;
+          font-weight: normal;
+          color: $dark-grey;
+          margin: 1.5rem 0 0.5rem 0;
+          @include uppercase;
+        }
+  
+        h5 {
+          font-size: $medium;
+          font-family: $serif;
+          font-weight: normal;
+        }
+  
+        h6.post-details {
+          font-family: $mono;
+          @include uppercase;
+          font-weight: normal;
+          font: $xx-small;
+        }
+      }
+    }
+  
+    .description {
+      text-align: justify;
+      @include flex-centered;
+      padding: 3.5rem 5%;
+  
+      p {
+        line-height: 2.5;
+        font-family: $mono;
+        font-size: $x-small;
+      }
+    }
+  }

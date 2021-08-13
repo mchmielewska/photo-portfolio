@@ -1,0 +1,48 @@
+@import '../abstracts/';
+
+#bottom-menu {
+    display: grid;
+    padding: 2.5rem 5%;
+    grid-template-columns: 1fr;
+    text-align: center;
+  
+    @include lg {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 5rem 5%;
+    }
+  
+    div {
+      padding: 2rem 0;
+    }
+  
+    div.center {
+      @include lg {
+        border-left: 1px solid $moss-green;
+        border-right: 1px solid $moss-green;
+      }
+    }
+  
+    div {
+      @include flex-centered;
+      flex-direction: column;
+  
+      p.first-line {
+        font-family: $mono;
+  
+        @include uppercase;
+      }
+  
+      p.second-line {
+        font-family: $serif;
+        @include uppercase;
+        font-size: $medium;
+        color: $moss-green;
+        @include ease-transition;
+  
+        &:hover {
+          color: $grey;
+        }
+      }
+    }
+  }
+  

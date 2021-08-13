@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { getStrapiPath } from '../utils/path';
 
 const SingleGalleryPost = (props) => {
-  const imgSource = getStrapiPath(true, true) + props.mainImage.url;
+  const imgSource = getStrapiPath(true, true) + props.mainImage.url.substring(0,8) + '/small_' + props.mainImage.url.substring(9);
   const url = `/${props.sessionCategory}/${props.gallery}`;
   const date = new Date(props.eventDate).toLocaleDateString('en-GB', {
     year: 'numeric',
@@ -12,7 +12,7 @@ const SingleGalleryPost = (props) => {
   return (
     <Link href={url}>
       <div className="gallery-item">
-        <img alt={props.title} src={imgSource} width='100%' height='100%'></img>
+        <img alt={props.title} src={imgSource} width="500" height="334"></img>
         <h4>{props.sessionCategory}</h4>
 
         <a href={url}>

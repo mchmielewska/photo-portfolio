@@ -62,6 +62,7 @@ export default function Home({ galleries }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
+        <link rel="canonical" href="https://www.monikachmielewska.com" />
       </Head>
       <Navbar />
       <div id="main-image"></div>

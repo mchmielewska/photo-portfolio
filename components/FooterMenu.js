@@ -4,7 +4,7 @@ const FooterMenu = () => {
   return (
     <div className="footer-menu">
       <div className="col" id="menu">
-        <h5>Monika Chmielewska</h5>
+        <h4>Monika Chmielewska</h4>
         <p className="heading">portrait & occasional photography</p>
         <ul>
           <li>

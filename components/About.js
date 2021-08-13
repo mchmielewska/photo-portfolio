@@ -3,11 +3,11 @@ import Link from 'next/link';
 const About = () => {
   return (
     <div className="about-section">
-      <div className="about-heading" alt="photographer">
+      <div className="about-heading">
         <h3>I'm Monika</h3>
         <h4>the one behind the camera</h4>
         <Link href="/about">
-          <a className="button" href="/about">read more</a>
+          <a className="button" href="/about">About me</a>
         </Link>
       </div>
       <div className="about-description">

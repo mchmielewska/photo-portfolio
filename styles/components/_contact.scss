@@ -1,0 +1,94 @@
+@import '../abstracts/';
+
+.contact-section {
+    @include clear-m-p;
+    @include flex-centered;
+    .container {
+      width: 90%;
+      @include flex-centered;
+      flex-direction: column;
+      padding: 1rem 0;
+  
+      @include md {
+        width: 75%;
+      }
+  
+      @include lg {
+        width: 50%;
+      }
+  
+      h1 {
+        margin-top: 2rem;
+        font-size: $x-large;
+        font-weight: normal;
+        font-family: $handwriting;
+        color: $almost-black;
+      }
+  
+      form {
+        font-family: $mono;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+        margin: 2rem 0;
+        padding: 1rem;
+        width: 100%;
+  
+        label {
+          grid-column: 1 / span 2;
+        }
+  
+        input[type='text'],
+        input[type='email'],
+        textarea {
+          padding: 0.5rem;
+          margin: 0.5rem 0;
+          border: solid 1px transparent;
+          border-bottom: solid 1px $dark-grey;
+          width: 100%;
+          font-family: $mono;
+          font-size: $small;
+          line-height: 2rem;
+          text-align: justify;
+  
+          &:focus,
+          &:active,
+          &:focus-visible {
+            border: solid 1px transparent;
+            border-bottom: solid 1px $moss-green;
+            outline: none;
+          }
+        }
+  
+        textarea {
+          resize: none;
+          width: 100%;
+  
+          &:focus,
+          &:active,
+          &:focus-visible {
+            border: solid 1px $moss-green;
+            outline: none;
+          }
+        }
+  
+        input[type='submit'] {
+          grid-column: 2;
+          margin: 0.5rem 0;
+          border: none;
+          font-size: $small;
+  
+          &:hover {
+            cursor: pointer;
+            border: none;
+          }
+  
+          &:focus,
+          &:active,
+          &:focus-visible {
+            outline: none;
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,109 @@
+@import '../abstracts/';
+
+.gallery-section {
+    margin: 5rem 5%;
+  
+    @include xl {
+      margin: 5rem 10% 5rem 10%;
+    }
+  
+    .grid {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+  
+      @include sl {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 0.5rem;
+        justify-items: center;
+      }
+  
+      @include sl-m {
+        grid-gap: 1.5rem;
+      }
+  
+      @include md {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 0.5rem;
+        justify-items: center;
+      }
+  
+      @include xl {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2.5rem;
+        height: calc((100vw - 11rem) / 3 * 1.2);
+        justify-items: center;
+      }
+  
+      h5 {
+        font-family: $serif;
+        font-size: $h-small;
+        font-weight: normal;
+        @include uppercase;
+      }
+      p {
+        font-family: $mono;
+        font-size: $x-small;
+      }
+  
+      svg {
+        width: 2rem;
+        height: 2rem;
+        font-size: $x-small;
+        transform: rotate(90deg) scale(0.6);
+        margin-left: 1rem;
+        @include svg-transition;
+      }
+  
+      .gallery-card {
+        display: flex;
+        flex-direction: column;
+        @include details-whitebackground;
+  
+        @include xl {
+          width: 100%;
+          height: 100%;
+          margin-bottom: 0;
+        }
+  
+        img {
+          width: 100%;
+          height: auto
+        }
+      }
+    }
+  }
+  
+  .gallery-section.portfolio {
+    margin-bottom: 1rem;
+  
+    @include xl {
+      margin: 5rem 20% 9rem 20%;
+    }
+  
+    @include xxl {
+      margin: 5rem 25% 9rem 25%;
+    }
+  
+    .grid {
+      height: auto;
+      height: initial;
+      display: inline;
+      grid-template-columns: 1fr;
+      grid-gap: 1.5rem;
+  
+      @include md {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+  
+      @include lg {
+        grid-gap: 3rem;
+      }
+    }
+  }

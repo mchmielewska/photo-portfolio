@@ -1,0 +1,137 @@
+@import '../abstracts';
+
+.pricing-page {
+  margin: 0;
+  padding: 5%;
+
+  @include lg {
+    padding: 5% 10%;
+  }
+
+  @include xl {
+    padding: 5% 15%;
+  }
+
+  .offers {
+    h4 {
+      font-size: $large;
+      font-weight: normal;
+      font-family: $handwriting;
+      z-index: 2;
+      text-align: center;
+
+      @include lg {
+        font-size: $x-large;
+      }
+    }
+    .description {
+      font-family: $serif;
+      font-size: $xx-small;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: $moss-green;
+      @include uppercase;
+    }
+
+    & > div {
+      padding: 7.5%;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      grid-template-columns: 1fr;
+      background-color: $light;
+      margin-bottom: 2rem;
+
+      @include md {
+        padding: 7.5% 5%;
+        grid-gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      h5 {
+        display: flex;
+        font-size: $h-small;
+        font-weight: normal;
+        font-family: $serif;
+        @include uppercase;
+        text-align: right;
+      }
+
+      p {
+        display: flex;
+        white-space: pre-line;
+        font-family: $mono;
+        font-size: $xx-small;
+        line-height: 2;
+        padding: 1.5rem 0;
+
+        @include md {
+          font-size: $x-small;
+          padding: 0;
+        }
+      }
+
+      @include md {
+        grid-template-columns: 1fr 3fr 1fr;
+      }
+    }
+  }
+}
+
+.pricing-section {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  margin-top: 2rem;
+  padding: 7.5% 5% 10% 5%;
+  background-color: $beige;
+
+  @include md {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .heading {
+    @include flex-centered;
+    flex-direction: column;
+
+    h3 {
+      font-size: $x-large;
+      font-weight: normal;
+      font-family: $handwriting;
+      z-index: 2;
+
+      @include lg {
+        font-size: $xm-large;
+      }
+    }
+
+    h4 {
+      font-size: $small;
+      font-family: $serif;
+      font-weight: normal;
+      @include uppercase;
+    }
+
+    .button {
+      font-size: $x-small;
+      margin-top: 2rem;
+    }
+  }
+
+  .description {
+    text-align: justify;
+    @include flex-centered;
+    padding: 1.5rem 10%;
+
+    @include lg {
+      padding: 3.5rem 20%;
+      border-right: 1px solid $grey;
+    }
+
+    p {
+      line-height: 2.5;
+      font-family: $mono;
+      font-size: $small;
+    }
+  }
+}

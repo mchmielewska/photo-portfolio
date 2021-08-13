@@ -1,0 +1,52 @@
+@import '../abstracts';
+
+#featured {
+    @include background-image('../../public/featured-sm.webp');
+  
+    height: 100vw;
+    position: relative;
+  
+    @include md {
+      @include background-image('../../public/featured.webp');
+      height: 75vw;
+    }
+  
+    @include lg {
+      height: 50vw;
+    }
+  
+    .heading {
+      position: absolute;
+      top: 30%;
+      left: 5%;
+      color: $white;
+      font-family: $mono;
+      font-size: $xx-small;
+  
+      @include md {
+        font-size: $small;
+      }
+  
+      span.handwriting {
+        font-family: $handwriting;
+        font-size: $large;
+        margin-right: 0;
+        position: relative;
+        top: 1.5rem;
+  
+        @include md {
+          font-size: $xm-large;
+          margin-right: 1rem;
+        }
+      }
+  
+      p.second-line {
+        margin-top: 0;
+        text-align: right;
+  
+        @include md {
+          margin-top: -1.5rem;
+        }
+      }
+    }
+  }

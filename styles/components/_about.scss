@@ -1,0 +1,68 @@
+@import '../abstracts';
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 2rem 0;
+    padding: 5%;
+    background-color: $light;
+  
+    @include md {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .about-heading {
+      @include flex-centered;
+      flex-direction: column;
+  
+      h3 {
+        font-size: $x-large;
+        font-weight: normal;
+        font-family: $handwriting;
+        z-index: 2;
+  
+        @include lg {
+          font-size: $xm-large;
+        }
+      }
+  
+      h4 {
+        font-family: $serif;
+        font-size: $x-small;
+        font-weight: normal;
+        @include uppercase;
+        text-align: center;
+  
+        @include lg {
+          font-size: $small;
+        }
+      }
+  
+      .button {
+        font-size: $x-small;
+        margin-top: 2rem;
+      }
+    }
+  
+    .about-description {
+      padding: 3.5rem 5%;
+      text-align: justify;
+      @include flex-centered;
+  
+      @include lg {
+        border-left: 1px solid $grey;
+        padding: 3.5rem 20%;
+      }
+  
+      p {
+        line-height: 2.5;
+        font-family: $mono;
+        font-size: $x-small;
+      }
+  
+      img {
+        width: 100%;
+      }
+    }
+  }
+  
